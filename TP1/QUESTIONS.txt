@@ -1,0 +1,15 @@
+Cell C Q1: What is the size of the vocabulary?
+Cell F Q2: What do you expect the following probabilities to be? Why?
+Cell H Q3: Run this code to produce a plot. What does this plot show? What is on the x-axis, what is on the y-axis?
+Cell H Q4: According to this plot, is the ngram assumption justified? If you don't remember what the ngram assumption is, ask Nils.
+Cell I Q5: Why does this throw an error?
+Cell K Q6: Why doesn't the dev perplexity keep decreasing as n increases?
+Cell L Q7: What are the best values for n and smoothing?
+Cell L Q8: How many parameters does the best ngram model have? Explain how you compute this quantity.
+Cell M Q9: What do you notice?
+Cell N Q10: How does this RNN LM deal with words outside of its vocabulary?
+Cell O Q11: How do the number of parameters of this model compare to the number of parameters of the best ngram model?
+Cell P Q12: How does the following compare to the best ngram model?
+Cell Q Q13: What else could we have done to further push the dev loss down?
+Cell S Q14: How does the following compare to the other models?
+Cell T Q15: What do you notice? Is there a phrase that describes this mismatch between distributions?
