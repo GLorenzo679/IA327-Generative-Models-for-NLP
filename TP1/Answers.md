@@ -4,11 +4,11 @@
 
 **Cell C Q1: What is the size of the vocabulary?**
 
-The size of the vocabulary is 743
+The size of the vocabulary is 743.
 
 **Cell F Q2: What do you expect the following probabilities to be? Why?**
 
-1. I expect P(\<eos\>|.) to be 1, since a period is always followed by an end of sentence token, (e.g. all sentences end with a period).
+1. I expect P(\<eos\>|".") to be 1, since a period is always followed by an end of sentence token, (e.g. all sentences end with a period).
 2. I expect P(\<eos\>|\<bos\>) to be 0, since a beginning of sentence token is never followed by an end of sentence token. This would mean that we have an empty sentence (e.g. \<bos\>\<eos\>).
 
 **Cell H Q3: Run this code to produce a plot. What does this plot show? What is on the x-axis, what is on the y-axis?**
@@ -21,7 +21,7 @@ The ngram assumption is that the probability of a word depends only on the previ
 In the plot we can see that two distinct trends:
 
 - For small n, the ngram assumption is justified: the n-grams are more frequent and are able to capture more information
-- For large n, the ngram assumption is not justified: the frequency of n-grams decreases rapidly, leading to data sparsity. This sparsity makes it difficult to estimate reliable probabilities, as many higher-order n-grams appear rarely or not at all in the dataset.
+- For large n, the ngram assumption is not justified: the frequency of n-grams decreases rapidly, leading to data sparsity. This sparsity makes it difficult to estimate reliable probabilities, as many higher-order n-grams appear rarely or not at all in the dataset
 
 **Cell I Q5: Why does this throw an error?**
 
@@ -33,8 +33,7 @@ We can see that the only sentences starting with "\<bos\> Liam hoped that a" are
 
 - Liam hoped that a beer
 - Liam hoped that a judge
-- Liam hoped that a girl
-- Liam hoped that a girl
+- Liam hoped that a girl (appears twice)
 
 Therefore, we are now sure that the 5-gram "box a hoped liam \<bos\>" does not appear in the training data.
 
@@ -60,10 +59,10 @@ Nevertheless we can see that the real number of parameters is only 11831.
 
 **Cell M Q9: What do you notice?**
 
-The perplexity of the model is similar for the text, the dev and the test sets.
+The perplexity of the model is similar for the train, the dev and the test sets.
 This means that the model generalizes well to unseen data and did not overfit the training data.
 
-However, the perplexity of the model is higher for the gen set.
+However, the perplexity of the model is higher for the gen set, meaning the model doesn't generalize perfectly.
 
 **Cell N Q10: How does this RNN LM deal with words outside of its vocabulary?**
 
@@ -90,13 +89,15 @@ Also in this case the perplexity is higher for the gen set, meaning that the mod
 
 **Cell Q Q13: What else could we have done to further push the dev loss down?**
 
+Another possible improvement would have been to use more complex embeddings, such as pre-trained embeddings (e.g. GloVe, Word2Vec, etc.).
+
 **Cell S Q14: How does the following compare to the other models?**
 
 The perplexity is slightly lower. This indicates that increasing the model size can help to improve the performance of the model.
 
 **Cell T Q15: What do you notice? Is there a phrase that describes this mismatch between distributions?**
 
-In all the cases, the perplexity is higher for the gen set (the mean of the perplexity is always higher for the gen set than for the test set).
+In all the cases, the perplexity is higher for the gen set (in the plot the mean of the perplexity distribution is always higher for the gen set than for the test set).
 
 We can see that both of the RNN models are able to reduce the perplexity on the test set, but not on the gen set. This is an example of **distribution shift**, where the test set is drawn from a similar distribution as the training set, while the gen set is drawn from a different distribution.
 
