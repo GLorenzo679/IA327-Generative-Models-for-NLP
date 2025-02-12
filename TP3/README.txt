@@ -1,0 +1,11 @@
+In this lab session:
+- Answer the questions from QUESTIONS.txt
+- Try out 3 LLMs. For each of them:
+    - Report their performance with respect to number of few-shot examples. You can go as high as the context window size permits.
+    - Report the amount of computation needed (e.g. Flops per sentence, averaged over test set)
+    - Report 90% confidence intervals
+    - Comment
+- This is due February 19th, 14h:
+    - A jupyter notebook with your code
+    - A pdf with the answers to the questions and with your results
+    - Please submit both files through eCampus

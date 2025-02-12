@@ -1,0 +1,2 @@
+Cell E Q1: What do the "dependency" metrics measure? You do not need to explain what precision, recall and F1 are, but you do need to explain what sets they are computed against.
+Cell F Q2: What is BM25? How does this retriever work?
