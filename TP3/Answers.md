@@ -25,316 +25,36 @@ The `get_samples` method is used to find the most relevant examples from the dat
 
 **Model: `Qwen/Qwen2.5-1.5B`**
 
-**0-shot**
-
-| Metric               | Value          |
-| -------------------- | -------------- |
-| Exact Match          | 0.0            |
-| Dependency Precision | 0.0            |
-| Dependency Recall    | 0.0            |
-| Dependency F1        | 0.0            |
-| Subtree Precision    | 0.0            |
-| Subtree Recall       | 0.0            |
-| Subtree F1           | 0.0            |
-| Edit Distance        | 0.9970         |
-| Mean                 | 0.997          |
-| Interval             | [0.995, 0.999] |
-| N                    | 16             |
-| GFLOPs               | 94.95          |
-| Avg len              | 121            |
-
-**1-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.1687         |
-| Dependency Recall        | 0.0518         |
-| Dependency F1            | 0.0713         |
-| Subtree Precision        | 0.0392         |
-| Subtree Recall           | 0.0088         |
-| Subtree F1               | 0.0129         |
-| Edit Distance            | 0.8467         |
-| Interval (Edit distance) | [0.801, 0.893] |
-| N                        | 48             |
-| GFLOPs                   | 856.78         |
-| Avg len                  | 986.40         |
-
-**2-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.2971         |
-| Dependency Recall        | 0.1187         |
-| Dependency F1            | 0.1536         |
-| Subtree Precision        | 0.0785         |
-| Subtree Recall           | 0.0280         |
-| Subtree F1               | 0.0392         |
-| Edit Distance            | 0.5998         |
-| Interval (Edit distance) | [0.559, 0.641] |
-| N                        | 16             |
-| GFLOPs                   | 1662.16        |
-| Avg len                  | 1899.06        |
-
-**4-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.3164         |
-| Dependency Recall        | 0.0998         |
-| Dependency F1            | 0.1339         |
-| Subtree Precision        | 0.0847         |
-| Subtree Recall           | 0.0191         |
-| Subtree F1               | 0.0287         |
-| Edit Distance            | 0.6092         |
-| Interval (Edit distance) | [0.563, 0.655] |
-| N                        | 16             |
-| GFLOPs                   | 3040.24        |
-| Avg len                  | 3448.94        |
-
-**8-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.2779         |
-| Dependency Recall        | 0.0985         |
-| Dependency F1            | 0.1322         |
-| Subtree Precision        | 0.0176         |
-| Subtree Recall           | 0.0047         |
-| Subtree F1               | 0.0072         |
-| Edit Distance            | 0.5909         |
-| Interval (Edit distance) | [0.553, 0.629] |
-| N                        | 16             |
-| GFLOPs                   | 6027.80        |
-| Avg len                  | 6833.38        |
-
-**16-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.3261         |
-| Dependency Recall        | 0.0994         |
-| Dependency F1            | 0.1428         |
-| Subtree Precision        | 0.0243         |
-| Subtree Recall           | 0.0144         |
-| Subtree F1               | 0.0158         |
-| Edit Distance            | 0.6078         |
-| Interval (Edit distance) | [0.571, 0.644] |
-| N                        | 32             |
-| GFLOPs                   | 12457.19       |
-| Avg len                  | 14069.56       |
+| Shot | Mean  | Interval       | Edit Distance | Dependency F1 | Subtree F1 | Prompt Length (Tokens) | FLOPS (GFLOPs) |
+| ---- | ----- | -------------- | ------------- | ------------- | ---------- | ---------------------- | -------------- |
+| 0    | 0.997 | [0.995, 0.999] | 0.997         | 0.000         | 0.000      | 30.75                  | 94.95          |
+| 1    | 0.847 | [0.801, 0.893] | 0.847         | 0.071         | 0.013      | 277.48                 | 856.78         |
+| 2    | 0.600 | [0.559, 0.641] | 0.600         | **0.154**     | 0.039      | 538.31                 | 1662.16        |
+| 4    | 0.609 | [0.563, 0.655] | 0.609         | 0.134         | 0.029      | 984.63                 | 3040.24        |
+| 8    | 0.591 | [0.553, 0.629] | **0.591**     | 0.132         | 0.007      | 1952.19                | 6027.80        |
+| 16   | 0.608 | [0.571, 0.644] | 0.608         | 0.143         | 0.016      | 4034.44                | 12457.19       |
 
 **Model: `deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B`**
 
-**0-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.0            |
-| Dependency Recall        | 0.0            |
-| Dependency F1            | 0.0            |
-| Subtree Precision        | 0.0            |
-| Subtree Recall           | 0.0            |
-| Subtree F1               | 0.0            |
-| Edit Distance            | 1.0146         |
-| Interval (Edit distance) | [0.986, 1.043] |
-| N                        | 16             |
-| GFLOPs                   | 98.04          |
-| Avg len                  | 121.0          |
-
-**1-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.0625         |
-| Dependency Recall        | 0.0222         |
-| Dependency F1            | 0.0317         |
-| Subtree Precision        | 0.0114         |
-| Subtree Recall           | 0.0032         |
-| Subtree F1               | 0.0050         |
-| Edit Distance            | 0.9497         |
-| Interval (Edit distance) | [0.901, 0.998] |
-| N                        | 32             |
-| GFLOPs                   | 837.16         |
-| Avg len                  | 962.44         |
-
-**2-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.1732         |
-| Dependency Recall        | 0.0338         |
-| Dependency F1            | 0.0513         |
-| Subtree Precision        | 0.0189         |
-| Subtree Recall           | 0.0028         |
-| Subtree F1               | 0.0047         |
-| Edit Distance            | 0.8001         |
-| Interval (Edit distance) | [0.752, 0.848] |
-| N                        | 48             |
-| GFLOPs                   | 1617.96        |
-| Avg len                  | 1842.88        |
-
-**4-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.2968         |
-| Dependency Recall        | 0.0838         |
-| Dependency F1            | 0.1159         |
-| Subtree Precision        | 0.0686         |
-| Subtree Recall           | 0.0152         |
-| Subtree F1               | 0.0221         |
-| Edit Distance            | 0.6179         |
-| Interval (Edit distance) | [0.581, 0.655] |
-| N                        | 16             |
-| GFLOPs                   | 3043.33        |
-| Avg len                  | 3448.94        |
-
-**8-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.3485         |
-| Dependency Recall        | 0.1010         |
-| Dependency F1            | 0.1362         |
-| Subtree Precision        | 0.0761         |
-| Subtree Recall           | 0.0186         |
-| Subtree F1               | 0.0241         |
-| Edit Distance            | 0.6306         |
-| Interval (Edit distance) | [0.587, 0.674] |
-| N                        | 48             |
-| GFLOPs                   | 6096.63        |
-| Avg len                  | 6907.25        |
-
-**16-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.3523         |
-| Dependency Recall        | 0.0975         |
-| Dependency F1            | 0.1319         |
-| Subtree Precision        | 0.0702         |
-| Subtree Recall           | 0.0188         |
-| Subtree F1               | 0.0264         |
-| Edit Distance            | 0.6043         |
-| Interval (Edit distance) | [0.565, 0.643] |
-| N                        | 32             |
-| GFLOPs                   | 12460.28       |
-| Avg len                  | 14069.56       |
+| Shot | Mean  | Interval       | Edit Distance | Dependency F1 | Subtree F1 | Prompt Length (Tokens) | FLOPS (GFLOPs) |
+| ---- | ----- | -------------- | ------------- | ------------- | ---------- | ---------------------- | -------------- |
+| 0    | 1.015 | [0.986, 1.043] | 1.015         | 0.000         | 0.000      | 31.75                  | 98.04          |
+| 1    | 0.950 | [0.901, 0.998] | 0.950         | 0.032         | 0.005      | 271.13                 | 837.16         |
+| 2    | 0.800 | [0.752, 0.848] | 0.800         | 0.051         | 0.005      | 524.00                 | 1617.96        |
+| 4    | 0.618 | [0.581, 0.655] | 0.618         | 0.116         | 0.022      | 985.63                 | 3043.33        |
+| 8    | 0.631 | [0.587, 0.674] | 0.631         | **0.136**     | 0.024      | 1974.48                | 6096.63        |
+| 16   | 0.604 | [0.565, 0.643] | **0.604**     | 0.132         | 0.026      | 4035.44                | 12460.28       |
 
 **Model: `HuggingFaceTB/SmolLM-135M`**
 
-**0-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.0            |
-| Dependency Recall        | 0.0            |
-| Dependency F1            | 0.0            |
-| Subtree Precision        | 0.0            |
-| Subtree Recall           | 0.0            |
-| Subtree F1               | 0.0            |
-| Edit Distance            | 1.0017         |
-| Interval (Edit distance) | [0.999, 1.005] |
-| N                        | 16             |
-| GFLOPs                   | 8.680          |
-| Avg len                  | 121.0          |
-
-**1-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.0749         |
-| Dependency Recall        | 0.0147         |
-| Dependency F1            | 0.0214         |
-| Subtree Precision        | 0.0104         |
-| Subtree Recall           | 0.0004         |
-| Subtree F1               | 0.0008         |
-| Edit Distance            | 0.9193         |
-| Interval (Edit distance) | [0.875, 0.964] |
-| N                        | 32             |
-| GFLOPs                   | 96.943         |
-| Avg len                  | 962.44         |
-
-**2-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.2307         |
-| Dependency Recall        | 0.0689         |
-| Dependency F1            | 0.0984         |
-| Subtree Precision        | 0.0382         |
-| Subtree Recall           | 0.0101         |
-| Subtree F1               | 0.0146         |
-| Edit Distance            | 0.7125         |
-| Interval (Edit distance) | [0.675, 0.750] |
-| N                        | 32             |
-| GFLOPs                   | 192.329        |
-| Avg len                  | 1863.75        |
-
-**4-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.2796         |
-| Dependency Recall        | 0.0884         |
-| Dependency F1            | 0.1235         |
-| Subtree Precision        | 0.0759         |
-| Subtree Recall           | 0.0166         |
-| Subtree F1               | 0.0254         |
-| Edit Distance            | 0.7084         |
-| Interval (Edit distance) | [0.670, 0.747] |
-| N                        | 32             |
-| GFLOPs                   | 372.959        |
-| Avg len                  | 3565.06        |
-
-**8-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.0765         |
-| Dependency Recall        | 0.0270         |
-| Dependency F1            | 0.0375         |
-| Subtree Precision        | 0.0123         |
-| Subtree Recall           | 0.0033         |
-| Subtree F1               | 0.0052         |
-| Edit Distance            | 0.9286         |
-| Interval (Edit distance) | [0.883, 0.975] |
-| N                        | 32             |
-| GFLOPs                   | 739.358        |
-| Avg len                  | 7027.81        |
-
-**16-shot**
-
-| Metric                   | Value          |
-| ------------------------ | -------------- |
-| Exact Match              | 0.0            |
-| Dependency Precision     | 0.0            |
-| Dependency Recall        | 0.0            |
-| Dependency F1            | 0.0            |
-| Subtree Precision        | 0.0            |
-| Subtree Recall           | 0.0            |
-| Subtree F1               | 0.0            |
-| Edit Distance            | 0.9931         |
-| Interval (Edit distance) | [0.988, 0.998] |
-| N                        | 16             |
-| GFLOPs                   | 1449.413       |
-| Avg len                  | 13706.31       |
+| Shot | Mean  | Interval       | Edit Distance | Dependency F1 | Subtree F1 | Prompt Length (Tokens) | FLOPS (GFLOPs) |
+| ---- | ----- | -------------- | ------------- | ------------- | ---------- | ---------------------- | -------------- |
+| 0    | 1.002 | [0.999, 1.005] | 1.002         | 0.000         | 0.000      | 32.25                  | 8.68           |
+| 1    | 0.919 | [0.875, 0.964] | 0.919         | 0.021         | 0.001      | 360.19                 | 96.94          |
+| 2    | 0.712 | [0.675, 0.750] | 0.712         | 0.098         | 0.015      | 714.59                 | 192.33         |
+| 4    | 0.708 | [0.670, 0.747] | **0.708**     | **0.123**     | 0.025      | 1385.72                | 372.96         |
+| 8    | 0.929 | [0.883, 0.975] | 0.929         | 0.038         | 0.005      | 2747.06                | 739.36         |
+| 16   | 0.993 | [0.988, 0.998] | 0.993         | 0.000         | 0.000      | 5385.25                | 1449.41        |
 
 #### Analysis:
 
