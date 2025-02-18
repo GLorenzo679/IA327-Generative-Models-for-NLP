@@ -1,8 +1,6 @@
-# TP3- Parsing
+# TP3- Parsing - Author: Gabriele LORENZO
 
-## Author: Gabriele LORENZO
-
-### Answers:
+## Answers:
 
 **Cell E Q1: What do the "dependency" metrics measure? You do not need to explain what precision, recall and F1 are, but you do need to explain what sets they are computed against.**
 
@@ -21,9 +19,15 @@ With the `build_index` method, the retriever creates the corpus: a collection of
 
 The `get_samples` method is used to find the most relevant examples from the dataset given a query. It returns the top_n examples with the highest BM25 scores.
 
-### Results:
+## Results:
 
-**Model: `Qwen/Qwen2.5-1.5B`**
+![Edit Distance vs Shot](./plots/edit_distance.png)
+
+In this graph we can see a comprehensive comparison of the edit distance for the different models across different few-shot settings.
+
+Here instead we have the tables with the results for the different models and few-shot settings:
+
+### Model: `Qwen/Qwen2.5-1.5B`
 
 | Shot | Mean  | Interval       | Edit Distance | Dependency F1 | Subtree F1 | Prompt Length (Tokens) | FLOPS (GFLOPs) |
 | ---- | ----- | -------------- | ------------- | ------------- | ---------- | ---------------------- | -------------- |
@@ -34,7 +38,7 @@ The `get_samples` method is used to find the most relevant examples from the dat
 | 8    | 0.591 | [0.553, 0.629] | **0.591**     | 0.132         | 0.007      | 1952.19                | 6027.80        |
 | 16   | 0.608 | [0.571, 0.644] | 0.608         | 0.143         | 0.016      | 4034.44                | 12457.19       |
 
-**Model: `deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B`**
+### Model: `deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B`
 
 | Shot | Mean  | Interval       | Edit Distance | Dependency F1 | Subtree F1 | Prompt Length (Tokens) | FLOPS (GFLOPs) |
 | ---- | ----- | -------------- | ------------- | ------------- | ---------- | ---------------------- | -------------- |
@@ -45,7 +49,7 @@ The `get_samples` method is used to find the most relevant examples from the dat
 | 8    | 0.631 | [0.587, 0.674] | 0.631         | 0.136         | 0.024      | 1974.48                | 6096.63        |
 | 16   | 0.604 | [0.565, 0.643] | **0.604**     | 0.132         | 0.026      | 4035.44                | 12460.28       |
 
-**Model: `HuggingFaceTB/SmolLM-135M`**
+### Model: `HuggingFaceTB/SmolLM-135M`
 
 | Shot | Mean  | Interval       | Edit Distance | Dependency F1 | Subtree F1 | Prompt Length (Tokens) | FLOPS (GFLOPs) |
 | ---- | ----- | -------------- | ------------- | ------------- | ---------- | ---------------------- | -------------- |
@@ -56,7 +60,7 @@ The `get_samples` method is used to find the most relevant examples from the dat
 | 8    | 0.929 | [0.883, 0.975] | 0.929         | 0.038         | 0.005      | 2747.06                | 739.36         |
 | 16   | 0.993 | [0.988, 0.998] | 0.993         | 0.000         | 0.000      | 5385.25                | 1449.41        |
 
-#### Analysis:
+## Analysis:
 
 The results highlight a clear trade-off between performance and computational cost across different few-shot settings for the evaluated models.
 
