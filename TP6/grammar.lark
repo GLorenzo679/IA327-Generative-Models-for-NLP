@@ -1,0 +1,61 @@
+?start: RETURN SPACE select (SPACE SEPARATOR RETURN SPACE sentence)~0..9 (SPACE)? NEWLINE
+
+NEWLINE: "\n"
+
+RETURN: "return"
+
+SEPARATOR: ";"
+
+SPACE: " " | "  " | "   "
+
+// TODO add other operations, one by one: filter | aggregate | arithmetic | boolean | comparative | comparison | discard | group | intersection | project | sort | superlative | union
+?sentence: select
+
+// TODO
+?select: default
+
+// TODO
+//?filter: default
+
+// TODO
+//?aggregate: default
+
+// TODO
+//?arithmetic: default
+
+// TODO
+//?boolean: default
+
+// TODO
+//?comparative: default
+
+// TODO
+//?comparison: default
+
+// TODO
+//?discard: default
+
+// TODO
+//?group: default
+
+// TODO
+//?intersection: default
+
+// TODO
+//?project: default
+
+// TODO
+//?sort: default
+
+// TODO
+//?superlative: default
+
+// TODO
+//?union: default
+
+// TODO
+?default: (word | argument) (SPACE (word | argument))~0..2   
+
+?word: (/[A-Za-z0-9]/)~1..20
+
+?argument: "#"(/[0-9]/)~1..2
